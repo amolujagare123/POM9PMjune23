@@ -18,6 +18,8 @@ public class Login {
     @FindBy (xpath = "//button[@type='submit']")
     WebElement btnLogin;
 
+    @FindBy(xpath = "//a[@class='btn btn-default']")
+    WebElement lnkForgotPass;
     public Login(WebDriver driver)
     {
         PageFactory.initElements(driver,this);
@@ -35,7 +37,11 @@ public class Login {
 
     public void clickLogin()
     {
-       btnLogin.click();
+        btnLogin.click();
+    }
+    public void clickForgotPass()
+    {
+        lnkForgotPass.click();
     }
 
     public void login(String username,String password)
