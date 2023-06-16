@@ -7,20 +7,12 @@ import org.testng.annotations.Test;
 import pages.AddClient;
 import pages.Login;
 import pages.Menu;
+import utility.DoLogin;
 
 import java.text.ParseException;
 
-public class AddClientTest {
-    WebDriver driver;
-    @BeforeClass
-    public void doLogin()
-    {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("http://localhost/ip");
-        Login login = new Login(driver);
-        login.login("amolujagare@gmail.com","admin123");
-    }
+public class AddClientTest extends DoLogin {
+
 
     @Test
     public void addClientTest() throws ParseException {
@@ -28,12 +20,6 @@ public class AddClientTest {
         menu.clickAddClient();
 
         AddClient addClient = new AddClient(driver);
-
-      //  addClient.setDate("02/03/2019"); // dd/MM/yyyy
-        // dd/MM/yyyy
-
-
-
 
         addClient.enterClientName("A1m2o3l");
         addClient.enterClientSurname("Ujagare");
@@ -45,7 +31,7 @@ public class AddClientTest {
         addClient.enterClientZip("10001");
         addClient.setCountry("India"); //
         addClient.setContainerGender("Female"); //
-         addClient.setDate2("02/03/2019");
+        addClient.setDate2("02/03/2019");
         addClient.enterClientPhone("555-123-4567");
         addClient.enterClientFax("555-987-6543");
         addClient.enterClientMobile("555-555-5555");
@@ -55,6 +41,6 @@ public class AddClientTest {
         addClient.enterClientTaxCode("ABC123");
         addClient.clickButtonSubmit();
 
-
     }
+
 }

@@ -5,16 +5,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 import pages.ForgotPassword;
 import pages.Login;
+import utility.OpenURL;
 
-public class ForgotPasswordTest {
+public class ForgotPasswordTest extends OpenURL {
 
     @Test
     public void forgotPasswordTest()
     {
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("http://localhost/ip");
-
         Login login = new Login(driver);
         login.clickForgotPass();
 
