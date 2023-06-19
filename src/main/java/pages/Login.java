@@ -20,6 +20,12 @@ public class Login {
 
     @FindBy(xpath = "//a[@class='btn btn-default']")
     public WebElement lnkForgotPass;
+
+    @FindBy (xpath= "//label[@for='email']")
+    public WebElement lblEmail;
+
+    @FindBy (xpath= "//label[@for='password']")
+    public WebElement lblPassword;
     public Login(WebDriver driver)
     {
         PageFactory.initElements(driver,this);
